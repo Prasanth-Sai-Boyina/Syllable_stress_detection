@@ -1,5 +1,5 @@
 ### Syllable_stress_detection
-The file Post_Part1.ipynb refers to the baseline model for mixed dataset
+The file Post_Part1.ipynb refers to the baseline model for mixed dataset <br />
 The file Post_Part1.ipynb refrers to the baseline model for german and italian models where dataset can be swapped
 The file Post_Part2_1_VAE_pipeline.ipynb refers to the proposed model for mixed dataset
 The file Post_Part2_1_VAE_pipeline_lang.ipynb refrers to the proposed model for german and italian models where dataset can be swapped
