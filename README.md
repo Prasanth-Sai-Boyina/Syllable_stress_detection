@@ -8,8 +8,8 @@ The file Post_Part2_1_VAE_pipeline_lang.ipynb refrers to the proposed model for 
 This folder contains all the trained model weights.
 
 # Directory Structure
-acoustic=Models when trained with acoustic features \n
-context=Models when trained with acoustic and context features \n
+acoustic=Models when trained with acoustic features
+context=Models when trained with acoustic and context features
 
 aecdnn_german= Normal Auto Encoder trained with german
 aecdnn_italian= Normal Auto Encoder trained with italian
