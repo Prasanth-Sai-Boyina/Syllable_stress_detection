@@ -1,5 +1,5 @@
 from tensorflow import keras
-
+import pickle
 import numpy as np
 
 
@@ -43,7 +43,7 @@ def make_partitions(arr_words, arr_labels):
 model_name="vae" # it can be "sae" or "ae" also
 language= "german" # it can be "italian" or "mixed" also
 fold= "part 1" #it can be "part 2", "part 3", "part 4", or "part 5" also
-type =" context" #it can be acoustic also
+type ="context" #it can be "acoustic" also
 
 
 string="./"+type+"/"+model_name+"cdnn_"+language+"/"+model_name+"cdnn"+language+fold+".h5"
@@ -53,7 +53,8 @@ encoder=keras.models.load_model(string)
 model.compile()
 encoder.compile()
 svm_test=encoder([test_features, test_labels])
-
+string="./classifiers/"+type+"/"+model_name+"cdnn"+language+fold+".sav"
+clf=pickle.load(open(string, "rb"))
 pred_svm_labels= clf.predict(svm_test)
 prob_labels=clf.predict_proba(svm_test)
 prob_labels=np.hsplit(prob_labels, 2)[1]
@@ -62,4 +63,3 @@ var3=calculate_accuracy(pred_svm_labels, test_labels)
 print(var3)
 var4=calculate_accuracy(post_svm_labels, test_labels)
 print(var4)
- 
