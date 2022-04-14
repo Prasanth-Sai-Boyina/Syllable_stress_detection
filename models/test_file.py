@@ -52,9 +52,13 @@ string="./"+type+"/"+model_name+"cdnn_"+language+"/"+model_name+"cdnn+encoder"+l
 encoder=keras.models.load_model(string)
 model.compile()
 encoder.compile()
-svm_test=encoder([test_features, test_labels])
+
+svm_test=encoder([test_features, test_labels]) #for vae
+#svm_test=encoder(test_features) #For ae and sae
+
 string="./classifiers/"+type+"/"+model_name+"cdnn"+language+fold+".sav"
 clf=pickle.load(open(string, "rb"))
+
 pred_svm_labels= clf.predict(svm_test)
 prob_labels=clf.predict_proba(svm_test)
 prob_labels=np.hsplit(prob_labels, 2)[1]
