@@ -41,11 +41,7 @@ def make_partitions(arr_words, arr_labels):
   return v1
 
 
-model_name="vae" # it can be "sae" or "ae" also
-language= "german" # it can be "italian" or "mixed" also
-fold= "part 1" #it can be "part 2", "part 3", "part 4", or "part 5" also
-type ="context" #it can be "acoustic" also
-
+fold= "part 2" #it can be "part 2", "part 3", "part 4", or "part 5" also
 
 
 
@@ -57,8 +53,8 @@ encoder=keras.models.load_model(string)
 model.compile()
 encoder.compile()
 
-avg="to be loaded"
-std="to be loaded"
+avg=np.array([ 0.13333481,  0.1446477 ,  0.11411749,  0.24227679,  0.08108932,        7.10899479, -0.41464473,  3.07106514,  0.43076186,  0.09259032,        0.08874673,  0.08810149,  0.02635661,  4.6956751 , -0.02651836,        2.20293505,  0.2642141 ,  0.43076736,  0.43073778])
+std=np.array([0.0988513 , 0.09184498, 0.0810298 , 0.15638119, 0.05784917,       1.70764467, 0.72323779, 1.50420049, 0.2054944 , 0.07367373,       0.06964175, 0.07136787, 0.02448825, 0.56165212, 0.38250157,       0.52026242, 0.16740864, 0.17844775, 0.17331636])
 
 
 test_features="to be loaded from file path"
