@@ -10,6 +10,8 @@ from keras.layers import Dropout
 from keras import backend as K
 import keras
 from sklearn import svm
+from variables import *
+
 
 def calculate_accuracy(arr1, arr2):
   count=0
@@ -55,6 +57,8 @@ def sampling(args):
 model_name="vae" # it can be "sae" or "ae" also
 language= "german" # it can be "italian" or "mixed" also
 fold= "part 1" #it can be "part 2", "part 3", "part 4", or "part 5" also
+part=fold[0]+fold[-1]
+
 type ="context" #it can be "acoustic" also
 
 if type=="context":
@@ -69,8 +73,11 @@ encoder=keras.models.load_model(string)
 model.compile()
 encoder.compile()
 
-avg="to be loaded"
-std="to be loaded"
+stringavg=type+language+part+"avg"
+stringstd=type+language+part+"std"
+
+avg="to be loaded" #Please equate it with the variable as above stringavg
+std="to be loaded" #Please equate it with the variable as above stringstd
 
 test_features="to be loaded from file path"
 test_labels="to be loaded from file path"
