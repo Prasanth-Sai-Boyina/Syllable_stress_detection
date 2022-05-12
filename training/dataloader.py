@@ -3,7 +3,7 @@ from google.colab import drive
 drive.mount('/content/drive')
 import numpy as np
 import scipy.io
-GER_tr = scipy.io.loadmat('/content/drive/MyDrive/postprocessing/GER_train.mat');
+GER_tr = scipy.io.loadmat('./matlab_matrix.mat');
 
 GER_train = GER_tr['GER_train']
 GER_ytrain = GER_train[0]
